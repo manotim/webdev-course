@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .box {
+      width: 200px;
+      height: 100px;
+      padding: 10px;
+      color: white;
+    }
+
+    .static-box {
+      background-color: gray;
+      position: static;
+    }
+
+    .relative-box {
+      background-color: blue;
+      position: relative;
+      top: 20px;
+      left: 30px;
+      z-index: 10;
+    }
+
+    .relative-box2 {
+      background-color: rgb(56, 56, 83);
+      position: relative;
+      top: -4px;
+      left: 34px;
+    }
+
+    .absolute-parent {
+      position: relative;
+      background-color: lightgreen;
+      padding: 50px;
+      z-index: 1032;
+    }
+
+    .absolute-box {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background-color: crimson;
+      z-index: 11;
+    }
+
+    .fixed-box {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: black;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="box static-box">Static Box</div>
+
+  <div class="box relative-box">Relative Box</div>
+  <div class="box relative-box2">Relative Box</div>
+
+  <div class="absolute-parent">
+    <div class="box absolute-box">Absolute Box</div>
+  </div>
+
+  <div class="box fixed-box">Fixed Box</div>
+
+  <p style="margin-top: 1000px;">Scroll down to test fixed position.</p>
+
+</body>
+</html>
