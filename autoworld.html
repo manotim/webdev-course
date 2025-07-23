@@ -6,13 +6,13 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      background: linear-gradient(to right, #f5f7fa, #c3cfe2);
+      background: black;
+      color: white;
       margin: 0;
       padding: 0;
     }
 
     header {
-      background-color: #1e2a38;
       color: white;
       text-align: center;
       padding: 40px 20px;
@@ -138,15 +138,34 @@
       text-decoration: none;
       margin: 0 10px;
     }
-
+  .header-container{
+    display: flex;
+    align-items: center;
+    
+  }
+  .header-container img {
+    width: 400px;
+    margin-left: 190px;
+  }
+  .header-info {
+    width: 40%;
+    align-items: right;
+  }
   </style>
 </head>
 <body>
 
-  <header>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Car_icon.svg/1024px-Car_icon.svg.png" alt="AutoWorld Logo">
-    <h1>AutoWorld</h1>
-    <p>Your Dream Car Awaits</p>
+  <header class="header-container">
+    <img src="images/home-picture.jpg" alt="AutoWorld Logo">
+    <div class="header-info">
+     <h1>AutoWorld</h1>
+     <p>I'm an <i>Interior Designer</i>  based in
+Seoul. Creating dynamic commercial
+spaces and tranquil residential
+homes are my <i>twin passions</i> . Work
+with me!</p>
+    </div>
+    
   </header>
 
   <section>

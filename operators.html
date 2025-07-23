@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CodeMaster Quiz</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #eef3f9;
+      padding: 20px;
+    }
+
+    .quiz-container {
+      max-width: 600px;
+      margin: auto;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      text-align: center;
+      color: #0066cc;
+    }
+
+    .question {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    button {
+      padding: 10px 20px;
+      background: #0066cc;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #004999;
+    }
+
+    .feedback {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    .score {
+      text-align: center;
+      font-size: 20px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="quiz-container">
+    
+
+    <h1>CodeMaster Quiz</h1>
+
+    <div id="quiz-box">
+
+      <p class="question" id="question">Loading question...</p>
+
+      <input type="text" id="answer" placeholder="Your answer here">
+
+      <button onclick="submitAnswer()">Submit</button>
+
+      <p class="feedback" id="feedback"></p>
+
+    </div>
+
+    <div class="score" id="score"></div>
+
+  </div>
+
+  <script>
+    const questions = [
+      { text: "What is 10 + '20' in JavaScript?", correct: "1020" },
+      { text: "What is the result of '5' * 2?", correct: "10" },
+      { text: "What does !!0 return?", correct: "false" },
+      { text: "What will be the output of: let a = 10; a++; console.log(a);", correct: "11" },
+      { text: "Is 10 === '10' true or false?", correct: "false" },
+      { text: "What is the remainder of 7 % 3?", correct: "1" },
+      { text: "What is the result of 20 > 10?", correct: "true" },
+      { text: "What is the result of 10 == '10'?", correct: "true" },
+      { text: "What will '10' / 2 return?", correct: "5" },
+      { text: "What does the prefix ++ operator do to a number?", correct: "increments" },
+      { text: "What will console.log(10 < '20') return?", correct: "true" },
+      { text: "What does !true return?", correct: "false" },
+      { text: "What is a unary minus of 10?", correct: "-10" },
+      { text: "What is the output of: let x = 1; x += 2; console.log(x);", correct: "3" },
+      { text: "Which operator checks both value and type?", correct: "===" }
+    ];
+
+    let current = 0;
+    let score = 0;
+
+    function showQuestion() {
+      if (current >= questions.length) {
+
+        document.getElementById("quiz-box").style.display = "none";
+
+        document.getElementById("score").innerHTML = `
+          🎉 Quiz Complete!<br>
+          ✅ Your Score: ${score} / ${questions.length}
+        `;
+
+        return;
+
+      }
+
+      document.getElementById("question").innerText = questions[current].text;
+      document.getElementById("answer").value = "";
+      document.getElementById("feedback").innerText = "";
+    }
+
+    function submitAnswer() {
+      const input = document.getElementById("answer").value.trim().toLowerCase();
+      const correct = questions[current].correct.toLowerCase();
+
+      if (input === "") {
+        alert("Please enter an answer!");
+        return;
+      }
+
+      if (input === correct) {
+        score++;
+        document.getElementById("feedback").innerText = "✅ Correct!";
+      } else {
+        document.getElementById("feedback").innerText = `❌ Wrong! Correct answer: ${questions[current].correct}`;
+      }
+
+      current++;
+      setTimeout(showQuestion, 1500);
+    }
+
+    showQuestion();
+  </script>
+
+</body>
+</html>

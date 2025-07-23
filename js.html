@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Interactive Profile Card</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f2f5;
+      padding: 20px;
+    }
+
+    .card {
+      width: 300px;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .form-group {
+      margin-top: 10px;
+    }
+
+    input {
+      width: 100%;
+      padding: 8px;
+      margin-top: 4px;
+    }
+
+    button {
+      margin-top: 10px;
+      padding: 10px;
+      width: 100%;
+      background-color: #007bff;
+      border: none;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h2 id="name">John Doe</h2>
+    <p id="age">Age: 25</p>
+    <p id="color">Favorite Color: Blue</p>
+
+    <div class="form-group">
+      <label for="inputName">Name:</label>
+      <input type="text" id="inputName" placeholder="Enter name" />
+    </div>
+
+    <div class="form-group">
+      <label for="inputAge">Age:</label>
+      <input type="number" id="inputAge" placeholder="Enter age" />
+    </div>
+
+    <div class="form-group">
+      <label for="inputColor">Favorite Color:</label>
+      <input type="text" id="inputColor" placeholder="Enter color" />
+    </div>
+
+    <button onclick="updateProfile()">Update Profile</button>
+    <button onclick="resetProfile()">Reset</button>
+  </div>
+
+  <script>
+    // Set default values
+const defaultProfile = {
+  name: "John Doe",
+  age: 25,
+  color: "Blue"
+};
+
+function updateProfile() {
+  // Get inputs
+  const name = document.getElementById("inputName").value;
+  const age = document.getElementById("inputAge").value;
+  const color = document.getElementById("inputColor").value;
+
+  // Validate and update DOM
+  if (name && age && color) {
+    document.getElementById("name").textContent = name;
+    document.getElementById("age").textContent = `Age: ${age}`;
+    document.getElementById("color").textContent = `Favorite Color: ${color}`;
+
+    // BOM usage: show success message
+    window.alert("Profile updated successfully!");
+  } else {
+    window.alert("Please fill in all fields!");
+  }
+}
+
+function resetProfile() {
+  document.getElementById("name").textContent = defaultProfile.name;
+  document.getElementById("age").textContent = `Age: ${defaultProfile.age}`;
+  document.getElementById("color").textContent = `Favorite Color: ${defaultProfile.color}`;
+
+  document.getElementById("inputName").value = "";
+  document.getElementById("inputAge").value = "";
+  document.getElementById("inputColor").value = "";
+
+  window.alert("Profile reset to default.");
+}
+
+  </script>
+</body>
+</html>

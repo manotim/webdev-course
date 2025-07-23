@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Form Example</title>
+</head>
+<body>
+  <form id="contactForm">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required /><br /><br>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" /><br /><br>
+
+    <label>Gender:</label>
+    <input type="radio" name="gender" value="male" /> Male
+    <input type="radio" name="gender" value="female" /> Female<br /><br>
+
+    <label for="message">Message:</label><br />
+    <textarea name="message" id="message" rows="4" cols="40"></textarea><br /><br>
+
+    <input type="submit" value="Send" />
+  </form>
+
+  <script>
+    // Target the form
+    const form = document.getElementById("contactForm");
+
+    // Add a submit event listener
+    form.addEventListener("submit", function (event) {
+      // Prevent default form submission (i.e., no page reload)
+      event.preventDefault();
+
+      // Collect form data
+      const name = document.getElementById("name").value;
+      const email = document.getElementById("email").value;
+      const gender = document.querySelector('input[name="gender"]:checked')?.value || "Not specified";
+      const message = document.getElementById("message").value;
+
+      // Example: Log form data to console
+      console.log("Form Submitted:");
+      console.log("Name:", name);
+      console.log("Email:", email);
+      console.log("Gender:", gender);
+      console.log("Message:", message);
+
+      // Optionally, show a success message or reset the form
+      alert("Thanks for your message, " + name + "!");
+      form.reset();
+    });
+  </script>
+</body>
+</html>

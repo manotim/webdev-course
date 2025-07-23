@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chun Hei Kim - Interior Designer Portfolio</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      line-height: 1.6;
+      background-color: #050505;
+      color: #f3eeee;
+      padding: 20px;
+    }
+
+    h1, h2, h3 {
+      color: #222;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .header {
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    .header h1 {
+      font-size: 3em;
+    }
+
+    .header p {
+      font-size: 1.2em;
+      margin-top: 10px;
+    }
+
+    .about, .experience, .specializations, .projects, .contact {
+      margin-top: 60px;
+    }
+
+    .section-title {
+      font-size: 1.8em;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #ccc;
+      padding-bottom: 5px;
+    }
+
+    .about p {
+      margin-bottom: 15px;
+    }
+
+    .experience ul, .specializations ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .experience li, .specializations li {
+      margin-bottom: 10px;
+    }
+
+    .projects .project {
+      margin-bottom: 40px;
+    }
+
+    .projects img {
+      width: 100%;
+      border-radius: 8px;
+      margin-top: 10px;
+    }
+
+    .contact p {
+      margin: 5px 0;
+    }
+
+    @media (min-width: 768px) {
+      .projects {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+      }
+
+      .projects .project {
+        margin-bottom: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <div class="header">
+      <h1>CHUN HEI KIM</h1>
+      <p>Interior Designer based in Seoul</p>
+      <p>Creating dynamic commercial spaces and tranquil residential homes are my twin passions.</p>
+    </div>
+
+    <!-- About -->
+    <section class="about">
+      <h2 class="section-title">ABOUT ME</h2>
+      <p>To me, spaces are exciting blank canvases, full of possibility. They offer a chance to express the tastes and preferences of their inhabitants, and influence the mood of customers or vibe of an establishment.</p>
+      <p>In short, spaces are living entities, and it gives me great pleasure to use my 10 years of interior design experience to help them meet their fullest potential.</p>
+    </section>
+
+    <!-- Training and Experience -->
+    <section class="experience">
+      <h2 class="section-title">TRAINING AND WORK EXPERIENCE</h2>
+      <ul>
+        <li>BFA, Major in Interior Design, Salguerro University (2018)</li>
+        <li>Interior Innovation Workshop by Trempleway Studio (2019)</li>
+        <li>Short Course in Furniture Design and Placement by Trempleway Studio (2020)</li>
+        <li>6-month program on Lighting Basics by Salguerro Open University (2021)</li>
+      </ul>
+    </section>
+
+    <!-- Specializations -->
+    <section class="specializations">
+      <h2 class="section-title">SPECIALIZATIONS</h2>
+      <ul>
+        <li><strong>Furniture and Fixtures:</strong> Design and Placement</li>
+        <li><strong>Blueprint Proficiency:</strong> Drawing, Reading, and Interpreting Interior Plans</li>
+        <li><strong>Lighting Design:</strong> Creating Unique Atmospheres Using Light and Shadows</li>
+      </ul>
+    </section>
+
+    <!-- Project Portfolio -->
+    <section class="projects">
+      <h2 class="section-title">PROJECTS</h2>
+
+      <div class="project">
+        <h3>THE TYLER HOME</h3>
+        <p>Residential | Concept, Rendering, Execution | Completed Jan 2025</p>
+        <ul>
+          <li>Natural Details: Wooden panels and accents to soften the space</li>
+          <li>Function in Form: Every piece of furniture serves a purpose</li>
+          <li>Space, Maximized: A minimalist approach to maximize each room</li>
+        </ul>
+        <img src="https://cdn.pixabay.com/photo/2016/08/26/15/06/living-room-1628872_1280.jpg" alt="The Tyler Home">
+      </div>
+
+      <div class="project">
+        <h3>THE KIM SUMMER HOME</h3>
+        <p>Residential | Concept, Rendering, Execution | Completed May 2025</p>
+        <img src="https://cdn.pixabay.com/photo/2017/07/08/01/58/bedroom-2486343_1280.jpg" alt="Kim Summer Home">
+      </div>
+
+      <div class="project">
+        <h3>MORGANI TEAHOUSE</h3>
+        <p>Commercial | Concept, Rendering, Execution | Completed Jul 2025</p>
+        <img src="https://cdn.pixabay.com/photo/2020/08/19/16/03/tea-5500253_1280.jpg" alt="Morgani Teahouse">
+      </div>
+
+      <div class="project">
+        <h3>THE TAGASHI FLAT</h3>
+        <p>Residential | Concept and Rendering | Completed May 2025</p>
+        <p>Nestled in an enclave away from the city, this residential space demanded an organic aesthetic that reflected its owners' love for nature and sustainability.</p>
+        <img src="https://cdn.pixabay.com/photo/2017/06/14/23/37/interior-2400376_1280.jpg" alt="The Tagashi Flat">
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact">
+      <h2 class="section-title">GET IN TOUCH</h2>
+      <p><strong>ADDRESS:</strong> 123 Anywhere St., Any City, State, Country 12345</p>
+      <p><strong>EMAIL:</strong> hello@reallygreatsite.com</p>
+      <p><strong>PHONE:</strong> (123) 456 7890</p>
+    </section>
+  </div>
+</body>
+</html>
